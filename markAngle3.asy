@@ -14,7 +14,6 @@ import three;
 
 void markAngle3(
     Label L = "", // label
-    align al = NoAlign, // label alignment
     triple C, // vertex of the angle
     triple A, // first side of the angle
     triple B, // second side of the angle
@@ -22,7 +21,8 @@ void markAngle3(
     bool cc = true, // draw the angle in the counterclockwise direction?
     pen p = currentpen, // pen for the angle arc
     pen fillpen = nullpen, // pen for the angle area (filling)
-    arrowbar3 arrow = None // arrow for the angle arc
+    arrowbar3 arrow = None, // arrow for the angle arc
+    align al = NoAlign // label alignment
 )
 {
     // calculate the length of each side

@@ -22,20 +22,20 @@ import graph3;
 import ellipse2Cart;
 
 path3 ellipse3(
- real e, // eccentricity (0 <= e < 1)
- real a, // semimajor axis [m]
- real eul1=0, // first Euler angle (right ascension of the ascending node) [deg]
- real eul2=0, // second Euler angle (inclination) [deg]
- real eul3=0, // third Euler angle (argument of periapsis) [deg]
- real ta1=0, // true anomaly at the beginning of the arc [deg]
- real ta2=360, // true anomaly at the end of the arc [deg]
- triple C=O, // coordinates of the main ellipse focus in the 3D frame
- int n=360 // number of true anomaly increments to use for calculations
+    real e, // eccentricity (0 <= e < 1)
+    real a, // semimajor axis [m]
+    real eul1=0, // first Euler angle (right ascension of the asc. node) [deg]
+    real eul2=0, // second Euler angle (inclination) [deg]
+    real eul3=0, // third Euler angle (argument of periapsis) [deg]
+    real ta1=0, // true anomaly at the beginning of the arc [deg]
+    real ta2=360, // true anomaly at the end of the arc [deg]
+    triple C=O, // coordinates of the main ellipse focus in the 3D frame
+    int n=360 // number of true anomaly increments to use for calculations
 )
 {
     // calculate the 2D path of the ellipse or arc of ellipse
     pair ellPos( real ta ){ return ellipse2Cart( e, a, ta ); }
-    path ell2 = graph( ellPos, ta1, ta2, n=n, join=Spline );
+    guide ell2 = graph( ellPos, ta1, ta2, n, Spline );
 
     // calculate the transformation from the 2D ellipse frame to the 3D frame
     transform3 T23 = rotate( eul1, Z ) * rotate( eul2, X ) * rotate( eul3, Z );

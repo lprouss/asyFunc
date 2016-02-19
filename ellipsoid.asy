@@ -28,7 +28,7 @@ revolution ellipsoid(
     // calculate the ellipse arc that will be used to create the ellipsoid
     path3 ellArc = ellipse3( ep, re, 0, 90, 0, -tap, tap, (re*ep,0,0), 10 );
 
-    // create the ellipsoid of revolution
+    // create the ellipsoid of revolution around the z axis
     return revolution( O, ellArc, Z );
 }
 

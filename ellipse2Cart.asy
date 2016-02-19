@@ -9,9 +9,9 @@
 // Created: February 2016
 
 pair ellipse2Cart(
- real e, // eccentricity (0 <= e < 1)
- real a, // semimajor axis [m]
- real ta // true anomaly [deg]
+    real e, // eccentricity (0 <= e < 1)
+    real a, // semimajor axis [m]
+    real ta // true anomaly [deg]
 )
 {
     // make sure the true anomaly value is lower than +-360 degrees
