@@ -28,7 +28,7 @@ triple lookInterEarth(
     real obsFrac, // observation time as a fraction of the orbit length
     real lookOff, // off-nadir angle for the look direction (degrees)
     real lookAz, // azimuth angle for the look direction (degrees)
-    pair radE = (-1,-1), // Earth ellipsoid radii [equatorial polar]
+    pair radE = (1,0.99665), // Earth ellipsoid radii [equatorial polar]
     surface surfE = null, // surface of the Earth ellipsoid
     real prec = -1 // absolute error, -1: machine precision
 )
